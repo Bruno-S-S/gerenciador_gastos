@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -45,7 +46,8 @@ dependencies {
     def lifecycle_version = "2.5.0"
     def room_version = "2.4.3"
     def koin_version = "3.2.0"
-    def material_version = "1.6.1"
+    def material2_version = "1.6.1"
+    def material3_version = "1.0.0-alpha15"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
@@ -53,7 +55,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     // "Front-end"
-    implementation "com.google.android.material:material:$material_version"
+//    implementation "com.google.android.material:material:$material2_version"
+    implementation "androidx.compose.material3:material3:$material3_version"
 
     // "Back-end"
     implementation "androidx.recyclerview:recyclerview:1.2.1"

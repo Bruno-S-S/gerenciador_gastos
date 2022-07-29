@@ -1,11 +1,13 @@
 package br.com.brulight.gerenciador_gastos.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import br.com.brulight.gerenciador_gastos.R
 import br.com.brulight.gerenciador_gastos.databinding.ActivityMonthsBinding
+import br.com.brulight.gerenciador_gastos.model.Month
 import br.com.brulight.gerenciador_gastos.ui.fragment.MonthsFragment
 import br.com.brulight.gerenciador_gastos.ui.fragment.MonthsFragment.MonthFragmentListener
 import br.com.brulight.gerenciador_gastos.ui.fragment.NewMonthFragment
@@ -19,7 +21,9 @@ class MonthsActivity : AppCompatActivity(R.layout.activity_months), MonthFragmen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        supportFragmentManager.beginTransaction().replace(R.id.months_container, MonthsFragment())
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.months_container, MonthsFragment())
             .commit()
     }
 
@@ -46,5 +50,12 @@ class MonthsActivity : AppCompatActivity(R.layout.activity_months), MonthFragmen
             .replace(R.id.months_container, NewMonthFragment())
             .addToBackStack(null)
             .commit()
+    }
+
+    override fun openExpenseFragment(month: Month) {
+        Intent(this, ExpensesActivity::class.java).apply {
+            putExtra(MONTH_KEY, month)
+            startActivity(this)
+        }
     }
 }

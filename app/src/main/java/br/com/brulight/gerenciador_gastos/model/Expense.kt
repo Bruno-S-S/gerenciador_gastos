@@ -9,6 +9,7 @@ data class Expense(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
     val name: String,
-    val price: BigDecimal,
-    val monthId: Long
+    val value: BigDecimal,
+    val monthId: Long,
+    val description: String
 )

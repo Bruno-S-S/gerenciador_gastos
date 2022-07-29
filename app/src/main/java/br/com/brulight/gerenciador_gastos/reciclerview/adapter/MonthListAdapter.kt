@@ -3,14 +3,14 @@ package br.com.brulight.gerenciador_gastos.reciclerview.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.com.brulight.gerenciador_gastos.databinding.ItemMonthBinding
 import br.com.brulight.gerenciador_gastos.model.Month
 
 class MonthListAdapter(
     private val context: Context,
-    months: List<Month> = emptyList()
+    months: List<Month> = emptyList(),
+    private val monthClick: (month: Month) -> Unit
 ) : RecyclerView.Adapter<MonthListAdapter.ViewHolder>() {
 
     private val months = months.toMutableList()
@@ -22,11 +22,7 @@ class MonthListAdapter(
 
         init {
             itemView.setOnClickListener {
-                Toast.makeText(
-                    context,
-                    "Esté o mês certo? ${month.name} ${month.year}",
-                    Toast.LENGTH_SHORT
-                ).show()
+                monthClick(month)
             }
         }
 

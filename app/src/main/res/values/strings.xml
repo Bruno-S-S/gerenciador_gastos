@@ -3,4 +3,5 @@
     <string name="qtd_itens_mes">Quantidade de itens neste mês:</string>
     <string name="selecione_o_ano_e_mes_desejado">Selecione o ano e mês desejado</string>
     <string name="nao_ha_necessidade_de_selecionar_o_dia">Não há necessidade de selecionar o dia 😉</string>
+    <string name="value">Valor:</string>
 </resources>
