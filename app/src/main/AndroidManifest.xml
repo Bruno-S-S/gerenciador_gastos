@@ -4,6 +4,7 @@
     package="br.com.brulight.gerenciador_gastos">
 
     <application
+        android:name=".AppAplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,8 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gerenciador_gastos"
         tools:targetApi="31">
+
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.MonthsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
